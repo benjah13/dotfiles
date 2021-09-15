@@ -1,0 +1,11 @@
+{
+	"it": {
+		"description": "Test case",
+		"scope": "javascript,typescript,typescriptreact",
+		"body": [
+			"it('$1', $2() => {",
+			"  $3",
+			"});"
+		]
+	}
+}

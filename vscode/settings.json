@@ -1,0 +1,41 @@
+{
+  "workbench.colorTheme": "Default Dark+",
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "terminal.integrated.profiles.linux": {
+    "bash": {
+      "path": "bash",
+      "icon": "terminal-bash"
+    },
+    "zsh": {
+      "path": "zsh"
+    },
+    "fish": {
+      "path": "fish"
+    },
+    "tmux": {
+      "path": "tmux",
+      "icon": "terminal-tmux"
+    },
+    "pwsh": {
+      "path": "pwsh",
+      "icon": "terminal-powershell"
+    },
+    "ben": {
+      "path": "zsh"
+    }
+  },
+  "terminal.integrated.fontFamily": "FiraMono Nerd Font",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.tslint": true
+  },
+  "eslint.format.enable": true,
+  "general.importType": "Top",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "window.title": "${rootName}${separator}${appName}",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "editor.fontFamily": "Fira Code",
+  "editor.fontLigatures": true,
+}
