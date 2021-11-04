@@ -111,14 +111,17 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 export NVM_HOME=~/.nvm
+export FLUTTER_HOME=~/snap/flutter/common/flutter/bin
+export ANDROID_HOME=/home/benjaminbuleon/Android/Sdk
 
-export PATH=${PATH}:${NVM_HOME}
+export PATH=${PATH}:${NVM_HOME}:${FLUTTER_HOME}:${ANDROID_HOME}
 export KUBECONFIG=$HOME/.kube/config
 
 source ${NVM_HOME}/nvm.sh
 
 # aliases
 alias -g NUL=' > /dev/null 2>&1'
+
 alias gs='git status' 
 alias gpf='git push --force'
 alias gcamend='git commit --amend --no-edit'
@@ -131,6 +134,8 @@ alias -s jpg='feh '
 alias -s png='feh '
 alias -s txt='cat '
 alias -s md='cat '
+
+alias k9s_secure='k9s --readonly'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
