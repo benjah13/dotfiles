@@ -17,6 +17,6 @@ lspconfig.setup {
     "tailwindcss",
     "yamlls",
     "tsserver",
-    "lua",
+--    "lua",
   },
 }

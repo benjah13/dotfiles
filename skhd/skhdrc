@@ -89,13 +89,7 @@ alt - 8 : yabai -m space --focus 8
 alt - 9 : yabai -m space --focus 9
 alt - 0 : yabai -m space --focus 10
 
-# # focus window
-ctrl - h : yabai -m window --focus west
-ctrl - j : yabai -m window --focus south
-ctrl - k : yabai -m window --focus north
-ctrl - l : yabai -m window --focus east
-
-# focus window (smae as above but with alt)
+# focus window
 alt - h : yabai -m window --focus west
 alt - j : yabai -m window --focus south
 alt - k : yabai -m window --focus north
@@ -108,10 +102,10 @@ alt + shift - k : yabai -m window --swap north
 alt + shift - l : yabai -m window --swap east
 
 # move managed window and split
-cmd + shift - h : yabai -m window --warp west
-cmd + shift - j : yabai -m window --warp south
-cmd + shift - k : yabai -m window --warp north
-cmd + shift - l : yabai -m window --warp east
+#cmd + shift - h : yabai -m window --warp west
+#cmd + shift - j : yabai -m window --warp south
+#cmd + shift - k : yabai -m window --warp north
+#cmd + shift - l : yabai -m window --warp east
 
 # rotate layout clockwise
 alt + shift - r : yabai -m space --rotate 270
@@ -171,7 +165,8 @@ ctrl + alt - right   : yabai -m window --grid 1:2:1:0:1:1
 # cmd + alt - x : yabai -m space --focus recent
 # cmd + alt - 1 : yabai -m space --focus 1
 
-# toggle window split type
+# toggle window split typ
+#
 alt - e : yabai -m window --toggle split
 
 # send window to desktop and follow focus
