@@ -30,5 +30,12 @@ fi
 sketchybar --set "$NAME" \
                  icon="$ICON" \
                  icon.color="$ICON_COLOR" \
+                 label="${PERCENTAGE}%" \
                  background.drawing="on" \
-                 label="${PERCENTAGE}%"
+                 background.border_color="$COLOR_WHITE" \
+                 background.border_width=1 \
+                 background.corner_radius=5 \
+                 background.height=25 \
+                 icon.padding_left=12 \
+                 icon.padding_right=6 \
+                 label.padding_right=12

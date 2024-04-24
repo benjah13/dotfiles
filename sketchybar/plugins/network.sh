@@ -1,5 +1,7 @@
 #!/bin/sh
 
+source "$HOME/.config/sketchybar/colors.sh"
+
 function getBytes {
     netstat -w1 > ~/.config/sketchybar/plugins/network.out & sleep 1; kill $!
 }
@@ -38,5 +40,17 @@ function human_readable() {
 DOWN_FORMAT=$(human_readable $DOWN 1)
 UP_FORMAT=$(human_readable $UP 1)
 
-sketchybar --set network.down label="$DOWN_FORMAT/s" \
-	       --set network.up   label="$UP_FORMAT/s"h
+sketchybar --set "$NAME" label="$DOWN_FORMAT/s" \
+                               padding_left=2                        \
+                               padding_right=2                       \
+                               background.border_width=1             \
+                               background.drawing = "on"             \
+                               icon=⇣                                \
+                               icon.color=$COLOR_GREEN               \
+                               label.color=$WHITE \
+                               background.border_color="$COLOR_WHITE" \
+                               background.corner_radius=5 \
+                               background.height=25 \
+                               icon.padding_left=12 \
+                               icon.padding_right=6 \
+                               label.padding_right=12

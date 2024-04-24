@@ -14,5 +14,12 @@ fi
 sketchybar --set "$NAME" \
                  icon="$ICON" \
                  icon.color="$COLOR" \
-                 background.drawing="on" \
                  label="VPN" \
+                 background.drawing="on" \
+                 background.border_color="$COLOR_WHITE" \
+                 background.border_width=1 \
+                 background.corner_radius=5 \
+                 background.height=25 \
+                 icon.padding_left=12 \
+                 icon.padding_right=6 \
+                 label.padding_right=12

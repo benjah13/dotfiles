@@ -19,6 +19,7 @@ default=(
   icon.padding_right=2
   label.padding_left=6
   label.padding_right=6 
+  background.drawing="on"
 )
 sketchybar --default "${default[@]}"
 
@@ -45,6 +46,7 @@ do
     icon.padding_right=12
     background.color=$BAR_COLOR
     background.corner_radius=5
+    background.border_width=1
     background.height=25
     label.drawing=off
     script="$PLUGIN_DIR/space.sh"

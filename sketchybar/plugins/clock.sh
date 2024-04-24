@@ -4,4 +4,14 @@
 # the item invoking this script:
 # https://felixkratz.github.io/SketchyBar/config/events#events-and-scripting
 
-sketchybar --set "$NAME" label="$(date '+%d/%m %H:%M')"
+source "$HOME/.config/sketchybar/colors.sh"
+
+sketchybar --set "$NAME" label="$(date '+%d/%m %H:%M')" \
+                 background.drawing="on" \
+                 background.border_color="$COLOR_WHITE" \
+                 background.border_width=1 \
+                 background.corner_radius=5 \
+                 background.height=25 \
+                 icon.padding_left=12 \
+                 icon.padding_right=6 \
+                 label.padding_right=12
