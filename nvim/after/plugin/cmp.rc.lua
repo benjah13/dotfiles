@@ -11,7 +11,7 @@ cmp.setup {
   view = {
     entries = {
       follow_cursor = true,
-    }
+    },
   },
   window = {
     documentation = cmp.config.window.bordered {

@@ -31,7 +31,8 @@ return require("lazy").setup {
   "nvim-telescope/telescope-live-grep-args.nvim",
   "windwp/nvim-autopairs",
   "aaronhallaert/advanced-git-search.nvim",
-  
+  "romgrk/barbar.nvim",
+
   -- alpha
   "goolord/alpha-nvim",
 
@@ -63,33 +64,17 @@ return require("lazy").setup {
   "m4xshen/hardtime.nvim",
   "TaDaa/vimade",
   "nvim-lua/plenary.nvim", -- Common utilities
-  {
-    "nvim-neo-tree/neo-tree.nvim",
-    version = "v3.x",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-      "MunifTanjim/nui.nvim",
-    },
-  },
-
-  "romgrk/barbar.nvim",
+  { "towolf/vim-helm", ft = "helm" },
   {
     "folke/trouble.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
-  },
-  {
-    "folke/which-key.nvim",
-    config = function()
-      vim.o.timeout = true
-      vim.o.timeoutlen = 300
-    end,
   },
   "nvim-lualine/lualine.nvim", -- Statusline
   "stevearc/dressing.nvim",
   "karb94/neoscroll.nvim",
   "nvim-pack/nvim-spectre",
   "mg979/vim-visual-multi",
+  { 'echasnovski/mini.files', version = false },
 
   -- treesitter
   {
@@ -110,7 +95,7 @@ return require("lazy").setup {
   },
 
   -- code stuffs
-  "lukas-reineke/indent-blankline.nvim",
+  { "lukas-reineke/indent-blankline.nvim", version = "v2.x" },
   "numToStr/Comment.nvim",
   "RRethy/vim-illuminate",
   "windwp/nvim-ts-autotag",

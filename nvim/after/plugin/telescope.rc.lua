@@ -14,7 +14,7 @@ telescope.setup {
   pickers = {
     colorscheme = {
       enable_preview = true,
-    }
+    },
   },
   defaults = {
     path_display = { "truncate" },
@@ -120,4 +120,3 @@ keymap("v", "<leader>st", function()
   local text = vim.getVisualSelection()
   tb.grep_string { search = text }
 end, opts)
-

@@ -89,6 +89,35 @@ local handlers = {
   ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
 }
 
+nvim_lsp.yamlls.setup {}
+
+nvim_lsp.helm_ls.setup {
+  settings = {
+    ["helm-ls"] = {
+      logLevel = "info",
+      valuesFiles = {
+        mainValuesFile = "values.yaml",
+        lintOverlayValuesFile = "values.lint.yaml",
+        additionalValuesFilesGlobPattern = "values*.yaml",
+      },
+      yamlls = {
+        enabled = true,
+        diagnosticsLimit = 50,
+        showDiagnosticsDirectly = false,
+        path = "yaml-language-server",
+        config = {
+          schemas = {
+            kubernetes = "templates/**",
+          },
+          completion = true,
+          hover = true,
+          -- any other config from https://github.com/redhat-developer/yaml-language-server#language-server-settings
+        },
+      },
+    },
+  },
+}
+
 nvim_lsp.tsserver.setup {
   on_attach = on_attach,
   filetypes = { "typescript", "typescriptreact", "typescript.tsx" },

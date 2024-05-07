@@ -38,4 +38,5 @@ sketchybar --set "$NAME" \
                  background.height=25 \
                  icon.padding_left=12 \
                  icon.padding_right=6 \
-                 label.padding_right=12
+                 label.padding_right=12 \
+                 label.font="Hack Nerd Font:Bold:12.0"

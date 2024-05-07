@@ -188,8 +188,8 @@ ctrl + shift - 0 : yabai -m window --space 10
 # ctrl + alt - 3  : yabai -m display --focus 3
 
 # send window to monitor and follow focus
-# ctrl + cmd - c  : yabai -m window --display next; yabai -m display --focus next
-# ctrl + cmd - 1  : yabai -m window --display 1; yabai -m display --focus 1
+ctrl + cmd - c  : yabai -m window --display next; yabai -m display --focus next
+ctrl + cmd - 1  : yabai -m window --display 1; yabai -m display --focus 1
 
 # set insertion point in focused container
 # ctrl + alt - h : yabai -m window --insert west

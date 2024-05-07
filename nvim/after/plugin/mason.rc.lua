@@ -15,8 +15,8 @@ lspconfig.setup {
     "html",
     "jsonls",
     "tailwindcss",
-    "yamlls",
     "tsserver",
---    "lua",
+    "helm_ls",
+    "yamlls",
   },
 }
