@@ -12,94 +12,77 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
+
 return require("lazy").setup {
-  -- colorschemes
-  { "catppuccin/nvim", as = "catppuccin" },
-  "folke/tokyonight.nvim",
-  "navarasu/onedark.nvim",
-  "EdenEast/nightfox.nvim",
-  "tomasiser/vim-code-dark",
-  "lunarvim/darkplus.nvim",
-  "sainnhe/gruvbox-material",
-  "ellisonleao/gruvbox.nvim",
+   -- to classify
+  { import = "plugins.avante" },
+  { import = "plugins.catpuccin" },
+  { import = "plugins.gruvbox" },
+  { import = "plugins.darkplus" },
+  { import = "plugins.autopairs" },
+  { import = "plugins.barbar" },
+  { import = "plugins.copilot" },
+  { import = "plugins.alpha" },
+  { import = "plugins.hardtime" },
+  { import = "plugins.dressing" },
+  { import = "plugins.minifiles" },
+  { import = "plugins.comment" },
+  { import = "plugins.indentlines" },
+  { import = "plugins.illuminate" },
+  { import = "plugins.diffview" },
+  { import = "plugins.ts-autotags" },
+  { import = "plugins.vim-visual-multi" },
+  { import = "plugins.lazygit" },
+  { import = "plugins.neoscroll" },
+  { import = "plugins.plenary" },
+  { import = "plugins.treesitter" },
+  { import = "plugins.lualine" },
+  { import = "plugins.vimade" },
+  { import = "plugins.web-devicons" },
+  { import = "plugins.vim-tmux-navigator" },
+  { import = "plugins.format-ts-errors" },
+  { import = "plugins.codecompanion" },
+  { import = "plugins.miniai" },
+  { import = "plugins.precognition" },
+  { import = "plugins.clipboard-history" },
+  { import = "plugins.namu" },
+
 
   -- telescope
-  "nvim-telescope/telescope.nvim",
-  "nvim-telescope/telescope-file-browser.nvim",
-  { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-  "nvim-telescope/telescope-ui-select.nvim",
-  "nvim-telescope/telescope-live-grep-args.nvim",
-  "windwp/nvim-autopairs",
-  "aaronhallaert/advanced-git-search.nvim",
-  "romgrk/barbar.nvim",
-
-  -- alpha
-  "goolord/alpha-nvim",
-
-  -- copilot
-  "github/copilot.vim",
+  { import = "plugins.telescope.telescope" },
+  { import = "plugins.telescope.telescope-fzf-native" },
+  { import = "plugins.telescope.telescope-file-browser" },
+  { import = "plugins.telescope.telescope-ui-select" },
+  { import = "plugins.telescope.telescope-advanced-git-search" },
 
   -- cmp
-  "hrsh7th/cmp-nvim-lsp",
-  "hrsh7th/cmp-buffer",
-  "hrsh7th/cmp-path",
-  "hrsh7th/cmp-cmdline",
-  "hrsh7th/nvim-cmp",
-  "saadparwaiz1/cmp_luasnip",
-
-  -- lsp
-  "neovim/nvim-lspconfig",
-  "onsails/lspkind-nvim", -- vscode-like pictograms
-  "williamboman/mason.nvim",
-  "williamboman/mason-lspconfig.nvim",
-  { "L3MON4D3/LuaSnip", run = "make install_jsregexp" },
-  "ray-x/lsp_signature.nvim",
-  {
-    "kosayoda/nvim-lightbulb",
-    dependencies = { "antoinemadec/FixCursorHold.nvim" },
-  },
-  "VidocqH/lsp-lens.nvim",
-
-  -- editor structure
-  "m4xshen/hardtime.nvim",
-  "TaDaa/vimade",
-  "nvim-lua/plenary.nvim", -- Common utilities
-  { "towolf/vim-helm", ft = "helm" },
-  {
-    "folke/trouble.nvim",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-  },
-  "nvim-lualine/lualine.nvim", -- Statusline
-  "stevearc/dressing.nvim",
-  "karb94/neoscroll.nvim",
-  "nvim-pack/nvim-spectre",
-  "mg979/vim-visual-multi",
-  { 'echasnovski/mini.files', version = false },
-
-  -- treesitter
-  {
-    "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate",
-  },
+  { import = "plugins.cmp.cmp-buffer" },
+  { import = "plugins.cmp.cmp-cmdline" },
+  { import = "plugins.cmp.cmp-nvim-lsp" },
+  { import = "plugins.cmp.cmp-path" },
+  { import = "plugins.cmp.cmp_luasnip" },
+  { import = "plugins.cmp.nvim-cmp" },
 
   -- git
-  "dinhhuy258/git.nvim", -- For git blame & browse
-  "tpope/vim-fugitive",
-  "sindrets/diffview.nvim",
-  "lewis6991/gitsigns.nvim", -- OPTIONAL: for git status
-  {
-    "kdheepak/lazygit.nvim",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-    },
-  },
+  { import = "plugins.git.git-nvim" },
+  { import = "plugins.git.gitsigns" },
+  { import = "plugins.git.vim-fugitive" },
+  { import = "plugins.git.git-conflict" },
 
-  -- code stuffs
-  { "lukas-reineke/indent-blankline.nvim", version = "v2.x" },
-  "numToStr/Comment.nvim",
-  "RRethy/vim-illuminate",
-  "windwp/nvim-ts-autotag",
+  -- lsp
+  { import = "plugins.lsp.mason" },
+  { import = "plugins.lsp.mason-lspconfig" },
+  { import = "plugins.lsp.nvim-lightbulb" },
+  { import = "plugins.lsp.lsp_signature" },
+  { import = "plugins.lsp.lspkind-nvim" },
+  { import = "plugins.lsp.nvim-lspconfig" },
+  { import = "plugins.lsp.luasnip" },
+  { import = "plugins.lsp.lsp-lens" },
+  { import = "plugins.lsp.nvim-lspconfig" },
+  --  { import = "plugins.lsp.typescript-tools" },
 
-  -- to keep ?
-  "norcalli/nvim-colorizer.lua",
+  -- DAP
+--  { import = 'plugins.dap.nvim-dap' },
 }
+
+

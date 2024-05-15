@@ -1,3 +1,14 @@
             input        (Total)           output
    packets  errs      bytes    packets  errs      bytes colls
-         4     0       1009          5     0       2706     0
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+         3     0        238          3     0        178     0
+=======
+        27     0       3078         29     0       2240     0
+>>>>>>> fc3f413 (q)
+=======
+>>>>>>> 97af28e (qqq)
+=======
+        37     0       6122         39     0       7444     0
+>>>>>>> b969aaa (clean)
