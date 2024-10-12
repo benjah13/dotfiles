@@ -1,2 +1,3 @@
             input        (Total)           output
    packets  errs      bytes    packets  errs      bytes colls
+         2     0         92          2     0         92     0

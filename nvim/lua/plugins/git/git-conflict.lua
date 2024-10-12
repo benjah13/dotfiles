@@ -5,8 +5,7 @@ return {
     require'git-conflict'.setup {
       highlights = { -- They must have background color, otherwise the default color will be used
         current = 'DiffText',
-                incoming = 'DiffAdd',
-
+        incoming = 'DiffAdd',
       }
     }
   end
