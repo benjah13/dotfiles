@@ -14,6 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 
 return require("lazy").setup {
   -- to classify
+  { import = "plugins.avante" },
   { import = "plugins.catpuccin" },
   { import = "plugins.gruvbox" },
   { import = "plugins.darkplus" },
@@ -35,14 +36,17 @@ return require("lazy").setup {
   { import = "plugins.plenary" },
   { import = "plugins.treesitter" },
   { import = "plugins.lualine" },
+  { import = "plugins.noice" },
   { import = "plugins.vimade" },
   { import = "plugins.trouble" },
   { import = "plugins.vim-helm" },
   { import = "plugins.web-devicons" },
   { import = "plugins.vim-tmux-navigator" },
-  { import = "plugins.noice" },
   { import = "plugins.format-ts-errors" },
-  { import = "plugins.avante" },
+  { import = "plugins.codecompanion" },
+  { import = "plugins.miniai" },
+  { import = "plugins.precognition" },
+
 
   -- telescope
   { import = "plugins.telescope.telescope" },
@@ -63,7 +67,7 @@ return require("lazy").setup {
   { import = "plugins.git.git-nvim" },
   { import = "plugins.git.gitsigns" },
   { import = "plugins.git.vim-fugitive" },
-  { import = "plugins.git.git-conflict" },
+--  { import = "plugins.git.git-conflict" },
 
   -- lsp
   { import = "plugins.lsp.mason" },

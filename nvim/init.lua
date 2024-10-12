@@ -20,5 +20,12 @@ autocmd("TextYankPost", {
   end,
 })
 
+autocmd('ColorScheme', {
+  callback = function()
+    require('avante.highlights').setup()
+ end,
+})
+
+
 vim.cmd "set foldmethod=indent"
-vim.cmd "set foldlevel=99"
+vim.cmd "set foldlevel=94"
