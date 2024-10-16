@@ -9,6 +9,12 @@ local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
 local yank_group = augroup("HighlightYank", {})
 
+autocmd('ColorScheme', {
+  callback = function()
+    require('avante.highlights').setup()
+ end,
+})
+
 autocmd("TextYankPost", {
   group = yank_group,
   pattern = "*",
@@ -18,12 +24,6 @@ autocmd("TextYankPost", {
       timeout = 40,
     }
   end,
-})
-
-autocmd('ColorScheme', {
-  callback = function()
-    require('avante.highlights').setup()
- end,
 })
 
 
