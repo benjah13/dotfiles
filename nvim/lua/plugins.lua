@@ -36,16 +36,14 @@ return require("lazy").setup {
   { import = "plugins.plenary" },
   { import = "plugins.treesitter" },
   { import = "plugins.lualine" },
-  { import = "plugins.noice" },
   { import = "plugins.vimade" },
-  { import = "plugins.trouble" },
-  { import = "plugins.vim-helm" },
   { import = "plugins.web-devicons" },
   { import = "plugins.vim-tmux-navigator" },
   { import = "plugins.format-ts-errors" },
   { import = "plugins.codecompanion" },
   { import = "plugins.miniai" },
   { import = "plugins.precognition" },
+  { import = "plugins.clipboard-history" },
 
 
   -- telescope
@@ -67,7 +65,7 @@ return require("lazy").setup {
   { import = "plugins.git.git-nvim" },
   { import = "plugins.git.gitsigns" },
   { import = "plugins.git.vim-fugitive" },
---  { import = "plugins.git.git-conflict" },
+   { import = "plugins.git.git-conflict" },
 
   -- lsp
   { import = "plugins.lsp.mason" },

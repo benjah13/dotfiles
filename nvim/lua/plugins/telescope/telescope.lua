@@ -1,7 +1,6 @@
 return {
   "nvim-telescope/telescope.nvim",
   config = function()
-    local trouble = require "trouble.sources.telescope"
     local status, telescope = pcall(require, "telescope")
     if not status then
       return
@@ -30,8 +29,6 @@ return {
           ".next",
         },
         mappings = {
-          i = { ["<c-t>"] = trouble.open },
-          n = { ["<c-t>"] = trouble.open },
           n = {
             ["q"] = actions.close,
           },
