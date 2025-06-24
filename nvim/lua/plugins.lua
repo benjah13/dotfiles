@@ -12,8 +12,9 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
+
 return require("lazy").setup {
-  -- to classify
+   -- to classify
   { import = "plugins.avante" },
   { import = "plugins.catpuccin" },
   { import = "plugins.gruvbox" },
@@ -44,6 +45,7 @@ return require("lazy").setup {
   { import = "plugins.miniai" },
   { import = "plugins.precognition" },
   { import = "plugins.clipboard-history" },
+  { import = "plugins.namu" },
 
 
   -- telescope
@@ -65,7 +67,7 @@ return require("lazy").setup {
   { import = "plugins.git.git-nvim" },
   { import = "plugins.git.gitsigns" },
   { import = "plugins.git.vim-fugitive" },
-   { import = "plugins.git.git-conflict" },
+  { import = "plugins.git.git-conflict" },
 
   -- lsp
   { import = "plugins.lsp.mason" },
@@ -77,5 +79,10 @@ return require("lazy").setup {
   { import = "plugins.lsp.luasnip" },
   { import = "plugins.lsp.lsp-lens" },
   { import = "plugins.lsp.nvim-lspconfig" },
---  { import = "plugins.lsp.typescript-tools" },
+  --  { import = "plugins.lsp.typescript-tools" },
+
+  -- DAP
+--  { import = 'plugins.dap.nvim-dap' },
 }
+
+
