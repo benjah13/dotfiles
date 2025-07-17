@@ -11,7 +11,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 
 vim.opt.rtp:prepend(lazypath)
-
+vim.g.maplocalleader = " "
 
 return require("lazy").setup {
    -- to classify
@@ -46,6 +46,7 @@ return require("lazy").setup {
   { import = "plugins.precognition" },
   { import = "plugins.clipboard-history" },
   { import = "plugins.namu" },
+  { import = "plugins.spectre" },
 
 
   -- telescope
