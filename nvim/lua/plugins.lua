@@ -11,43 +11,42 @@ if not vim.loop.fs_stat(lazypath) then
 end
 
 vim.opt.rtp:prepend(lazypath)
-vim.g.maplocalleader = " "
 
 return require("lazy").setup {
-   -- to classify
-  { import = "plugins.avante" },
-  { import = "plugins.catpuccin" },
-  { import = "plugins.gruvbox" },
-  { import = "plugins.darkplus" },
-  { import = "plugins.autopairs" },
-  { import = "plugins.barbar" },
-  { import = "plugins.copilot" },
+  -- Editor strcture
   { import = "plugins.alpha" },
-  { import = "plugins.hardtime" },
-  { import = "plugins.dressing" },
-  { import = "plugins.minifiles" },
-  { import = "plugins.comment" },
-  { import = "plugins.indentlines" },
-  { import = "plugins.illuminate" },
-  { import = "plugins.diffview" },
-  { import = "plugins.ts-autotags" },
-  { import = "plugins.vim-visual-multi" },
-  { import = "plugins.lazygit" },
-  { import = "plugins.neoscroll" },
   { import = "plugins.plenary" },
-  { import = "plugins.treesitter" },
   { import = "plugins.lualine" },
-  { import = "plugins.vimade" },
-  { import = "plugins.web-devicons" },
   { import = "plugins.vim-tmux-navigator" },
-  { import = "plugins.format-ts-errors" },
-  { import = "plugins.codecompanion" },
-  { import = "plugins.miniai" },
-  { import = "plugins.precognition" },
+  { import = "plugins.treesitter" },
+  { import = "plugins.neoscroll" },
+  { import = "plugins.web-devicons" },
+  { import = "plugins.minifiles" },
+  { import = "plugins.dressing" },
+  { import = "plugins.indentlines" },
+  { import = "plugins.barbar" },
+  
+  -- Editor features
+  { import = "plugins.vimade" },
   { import = "plugins.clipboard-history" },
+  { import = "plugins.illuminate" },
   { import = "plugins.namu" },
+  { import = "plugins.format-ts-errors" },
+  { import = "plugins.vim-visual-multi" },
+  { import = "plugins.comment" },
+  { import = "plugins.autopairs" },
+  { import = "plugins.hardtime" },
   { import = "plugins.spectre" },
 
+  -- themes
+  { import = "plugins.darkplus" },
+  { import = "plugins.gruvbox" },
+  { import = "plugins.catpuccin" },
+
+  -- AI
+  { import = "plugins.copilot" },
+  { import = "plugins.avante" },
+  { import = "plugins.codecompanion" },
 
   -- telescope
   { import = "plugins.telescope.telescope" },
@@ -67,8 +66,10 @@ return require("lazy").setup {
   -- git
   { import = "plugins.git.git-nvim" },
   { import = "plugins.git.gitsigns" },
+  { import = "plugins.lazygit" },
   { import = "plugins.git.vim-fugitive" },
   { import = "plugins.git.git-conflict" },
+  { import = "plugins.diffview" },
 
   -- lsp
   { import = "plugins.lsp.mason" },
@@ -80,10 +81,9 @@ return require("lazy").setup {
   { import = "plugins.lsp.luasnip" },
   { import = "plugins.lsp.lsp-lens" },
   { import = "plugins.lsp.nvim-lspconfig" },
-  --  { import = "plugins.lsp.typescript-tools" },
 
   -- DAP
---  { import = 'plugins.dap.nvim-dap' },
+  --  { import = 'plugins.dap.nvim-dap' },
 }
 
 
