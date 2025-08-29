@@ -5,4 +5,3 @@ require "macos"
 require "plugins"
 require "current-theme"
 require "remote"
-

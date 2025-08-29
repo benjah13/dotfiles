@@ -1,3 +1,3 @@
 return {
-  "TaDaa/vimade", 
- }
+  "TaDaa/vimade",
+}

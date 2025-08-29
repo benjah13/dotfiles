@@ -1,9 +1,7 @@
-local dap = require("dap")
-local dapui = require("dapui")
-local utils = require("dap.utils")
-local mason_registry = require("mason-registry")
-
-
+local dap = require "dap"
+local dapui = require "dapui"
+local utils = require "dap.utils"
+local mason_registry = require "mason-registry"
 
 dap.adapters = {
   ["node"] = {
@@ -13,23 +11,23 @@ dap.adapters = {
 }
 
 dap.configurations["typescript"] = {
-        {
-          type = "node",
-          request = "launch",
-          name = "Launch file",
-          program = "${file}",
-          cwd = "${workspaceFolder}",
-        },
-        {
-          type = "node",
-          request = "attach",
-          name = "Attach to process ID",
-          processId = utils.pick_process,
-          cwd = "${workspaceFolder}",
-        },
+  {
+    type = "node",
+    request = "launch",
+    name = "Launch file",
+    program = "${file}",
+    cwd = "${workspaceFolder}",
+  },
+  {
+    type = "node",
+    request = "attach",
+    name = "Attach to process ID",
+    processId = utils.pick_process,
+    cwd = "${workspaceFolder}",
+  },
 }
 
-dapui.setup({
+dapui.setup {
   icons = { expanded = "▾", collapsed = "▸", current_frame = "*" },
   controls = {
     icons = {
@@ -44,12 +42,11 @@ dapui.setup({
       disconnect = "⏏",
     },
   },
-})
+}
 
 dap.listeners.after.event_initialized["dapui_config"] = dapui.open
 dap.listeners.before.event_terminated["dapui_config"] = dapui.close
 dap.listeners.before.event_exited["dapui_config"] = dapui.close
-
 
 local map = function(keys, func, desc)
   if desc then
@@ -77,7 +74,7 @@ map("g", function()
 end, "[G]o to line (no execute)")
 map("b", dap.toggle_breakpoint, "Toggle [B]reakpoint")
 map("B", function()
-  dap.set_breakpoint(vim.fn.input("Breakpoint condition: "))
+  dap.set_breakpoint(vim.fn.input "Breakpoint condition: ")
 end, "Set [B]reakpoint")
 map("j", dap.down, "Down")
 map("k", dap.up, "Up")
@@ -93,18 +90,13 @@ map("w", function()
 end, "Widgets")
 
 map("u", function()
-  dapui.toggle({
+  dapui.toggle {
     -- Always open the nvim dap ui in the default sizes
     reset = true,
-  })
+  }
 end, "Toggle [U]I")
 map("e", function()
   dapui.eval()
 end, "Eval")
 
-vim.api.nvim_set_keymap(
-  "n",
-  "<F5>",
-  [[:lua require"osv".launch({port = 8086})<CR>]],
-  { noremap = true }
-)
+vim.api.nvim_set_keymap("n", "<F5>", [[:lua require"osv".launch({port = 8086})<CR>]], { noremap = true })

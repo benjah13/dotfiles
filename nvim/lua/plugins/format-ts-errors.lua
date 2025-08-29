@@ -1,3 +1,3 @@
 return {
-  "davidosomething/format-ts-errors.nvim"
+  "davidosomething/format-ts-errors.nvim",
 }

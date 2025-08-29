@@ -8,7 +8,7 @@ return {
     { "stevearc/dressing.nvim", opts = {} }, -- Optional: Improves `vim.ui.select`
   },
   config = function()
-    require("codecompanion").setup({
+    require("codecompanion").setup {
       strategies = {
         chat = {
           adapter = "copilot",
@@ -18,8 +18,8 @@ return {
         },
         agent = {
           adapter = "copilot",
+        },
       },
-    },
-  })
-  end
+    }
+  end,
 }

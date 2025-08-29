@@ -1,16 +1,15 @@
 local header = {
-	[[                                                                       ]],
-	[[  ██████   █████                   █████   █████  ███                  ]],
-	[[ ░░██████ ░░███                   ░░███   ░░███  ░░░                   ]],
-	[[  ░███░███ ░███   ██████   ██████  ░███    ░███  ████  █████████████   ]],
-	[[  ░███░░███░███  ███░░███ ███░░███ ░███    ░███ ░░███ ░░███░░███░░███  ]],
-	[[  ░███ ░░██████ ░███████ ░███ ░███ ░░███   ███   ░███  ░███ ░███ ░███  ]],
-	[[  ░███  ░░█████ ░███░░░  ░███ ░███  ░░░█████░    ░███  ░███ ░███ ░███  ]],
-	[[  █████  ░░█████░░██████ ░░██████     ░░███      █████ █████░███ █████ ]],
-	[[ ░░░░░    ░░░░░  ░░░░░░   ░░░░░░       ░░░      ░░░░░ ░░░░░ ░░░ ░░░░░  ]],
-	[[                                                                       ]],
+  [[                                                                       ]],
+  [[  ██████   █████                   █████   █████  ███                  ]],
+  [[ ░░██████ ░░███                   ░░███   ░░███  ░░░                   ]],
+  [[  ░███░███ ░███   ██████   ██████  ░███    ░███  ████  █████████████   ]],
+  [[  ░███░░███░███  ███░░███ ███░░███ ░███    ░███ ░░███ ░░███░░███░░███  ]],
+  [[  ░███ ░░██████ ░███████ ░███ ░███ ░░███   ███   ░███  ░███ ░███ ░███  ]],
+  [[  ░███  ░░█████ ░███░░░  ░███ ░███  ░░░█████░    ░███  ░███ ░███ ░███  ]],
+  [[  █████  ░░█████░░██████ ░░██████     ░░███      █████ █████░███ █████ ]],
+  [[ ░░░░░    ░░░░░  ░░░░░░   ░░░░░░       ░░░      ░░░░░ ░░░░░ ░░░ ░░░░░  ]],
+  [[                                                                       ]],
 }
-
 
 local function lineColor(lines, popStart, popEnd)
   local out = {}
@@ -23,14 +22,14 @@ local function lineColor(lines, popStart, popEnd)
     else
       hi = "StartLogo" .. i
     end
-    table.insert(out, { hi = hi, line = line})
+    table.insert(out, { hi = hi, line = line })
   end
   return out
 end
 
 local headers = {
   lineColor(header, 6, 12),
- }
+}
 
 local function header_chars()
   math.randomseed(os.time())
@@ -60,16 +59,16 @@ local function header_color()
   local output = {
     type = "group",
     val = lines,
-    opts = { position = "center", },
+    opts = { position = "center" },
   }
 
   return output
 end
 
 local function configure()
-  local theme = require("alpha.themes.theta")
+  local theme = require "alpha.themes.theta"
   local themeconfig = theme.config
-  local dashboard = require("alpha.themes.dashboard")
+  local dashboard = require "alpha.themes.dashboard"
   local buttons = {
     type = "group",
     val = {
@@ -93,9 +92,9 @@ local function configure()
 end
 
 return {
-  'goolord/alpha-nvim',
-  dependencies = { 'nvim-tree/nvim-web-devicons' },
-  config = function ()
-    require'alpha'.setup(configure())
-  end
-};
+  "goolord/alpha-nvim",
+  dependencies = { "nvim-tree/nvim-web-devicons" },
+  config = function()
+    require("alpha").setup(configure())
+  end,
+}

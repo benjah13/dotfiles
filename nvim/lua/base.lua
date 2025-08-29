@@ -13,7 +13,6 @@ vim.opt.fileencoding = "utf-8"
 vim.wo.number = true
 vim.wo.relativenumber = true
 
-
 vim.opt.title = true
 vim.opt.autoindent = true
 vim.opt.hlsearch = false

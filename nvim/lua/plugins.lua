@@ -25,7 +25,7 @@ return require("lazy").setup {
   { import = "plugins.dressing" },
   { import = "plugins.indentlines" },
   { import = "plugins.barbar" },
-  
+
   -- Editor features
   { import = "plugins.vimade" },
   { import = "plugins.clipboard-history" },
@@ -85,5 +85,3 @@ return require("lazy").setup {
   -- DAP
   --  { import = 'plugins.dap.nvim-dap' },
 }
-
-

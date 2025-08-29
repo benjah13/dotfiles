@@ -1,22 +1,21 @@
-
 -- Simpler and more reliable setup
 return {
   {
     "mfussenegger/nvim-dap",
     dependencies = {
       "rcarriga/nvim-dap-ui",
-      "nvim-neotest/nvim-nio", 
+      "nvim-neotest/nvim-nio",
       "theHamsta/nvim-dap-virtual-text",
     },
     config = function()
-      local dap = require("dap")
-      local dapui = require("dapui")
+      local dap = require "dap"
+      local dapui = require "dapui"
 
       -- DON'T set log level here - it causes empty log files
       -- dap.set_log_level("DEBUG") -- This breaks logging
-      
+
       -- Setup DAP UI
-      dapui.setup({
+      dapui.setup {
         controls = {
           enabled = true,
         },
@@ -40,10 +39,10 @@ return {
             position = "bottom",
           },
         },
-      })
+      }
 
       -- Setup virtual text
-      require("nvim-dap-virtual-text").setup({
+      require("nvim-dap-virtual-text").setup {
         enabled = true,
         enabled_commands = true,
         highlight_changed_variables = true,
@@ -52,18 +51,18 @@ return {
         commented = false,
         only_first_definition = true,
         all_references = false,
-        filter_references_pattern = '<module',
-        virt_text_pos = 'eol',
+        filter_references_pattern = "<module",
+        virt_text_pos = "eol",
         all_frames = false,
         virt_lines = false,
-        virt_text_win_col = nil
-      })
+        virt_text_win_col = nil,
+      }
 
       -- Manual Node.js adapter setup (more reliable)
       dap.adapters.node2 = {
         type = "executable",
         command = "node",
-        args = { vim.fn.stdpath("data") .. "/mason/packages/node-debug2-adapter/out/src/nodeDebug.js" },
+        args = { vim.fn.stdpath "data" .. "/mason/packages/node-debug2-adapter/out/src/nodeDebug.js" },
       }
 
       -- Alternative: use pwa-node if you have it installed globally
@@ -74,14 +73,14 @@ return {
         executable = {
           command = "js-debug-adapter", -- Make sure this is in your PATH
           args = { "${port}" },
-        }
+        },
       }
 
       -- TypeScript/JavaScript configurations
       dap.configurations.typescript = {
         {
           name = "Launch TS with tsx (Recommended)",
-          type = "node2", 
+          type = "node2",
           request = "launch",
           program = "${file}",
           cwd = vim.fn.getcwd(),
@@ -103,7 +102,7 @@ return {
           sourceMaps = true,
           outFiles = {
             "${workspaceFolder}/**/*.js",
-            "!**/node_modules/**"
+            "!**/node_modules/**",
           },
         },
         {
@@ -119,7 +118,7 @@ return {
             "${workspaceFolder}/dist/**/*.js",
             "${workspaceFolder}/build/**/*.js",
             "${workspaceFolder}/out/**/*.js",
-            "!**/node_modules/**"
+            "!**/node_modules/**",
           },
           preLaunchTask = "tsc: build", -- Optional: auto-compile before debug
         },
@@ -137,7 +136,7 @@ return {
           skipFiles = { "<node_internals>/**" },
           outFiles = {
             "${workspaceFolder}/**/*.js",
-            "!**/node_modules/**"
+            "!**/node_modules/**",
           },
         },
       }
@@ -164,31 +163,30 @@ return {
       vim.keymap.set("n", "<leader>b", dap.toggle_breakpoint, { desc = "Debug: Toggle Breakpoint" })
       vim.keymap.set("n", "<leader>dr", dap.repl.open, { desc = "Debug: Open REPL" })
       vim.keymap.set("n", "<leader>du", dapui.toggle, { desc = "Debug: Toggle UI" })
-      
+
       -- Debug helpers (safe logging commands)
       vim.keymap.set("n", "<leader>dl", function()
-        local log_file = vim.fn.stdpath("cache") .. "/dap.log"
+        local log_file = vim.fn.stdpath "cache" .. "/dap.log"
         vim.cmd("edit " .. log_file)
       end, { desc = "Debug: Open log file" })
-      
+
       vim.keymap.set("n", "<leader>dL", function()
         -- Temporarily enable verbose logging for one session
-        print("Enabling verbose logging for this session...")
-        dap.set_log_level("DEBUG") -- Use INFO instead of DEBUG/TRACE
+        print "Enabling verbose logging for this session..."
+        dap.set_log_level "DEBUG" -- Use INFO instead of DEBUG/TRACE
       end, { desc = "Debug: Enable verbose logging" })
-      
+
       vim.keymap.set("n", "<leader>dc", function()
-        print("Available adapters:")
+        print "Available adapters:"
         for name, _ in pairs(dap.adapters) do
           print("- " .. name)
         end
-        print("Available configurations:")
+        print "Available configurations:"
         for ft, configs in pairs(dap.configurations) do
           print("- " .. ft .. " (" .. #configs .. " configs)")
         end
         print("Current log level: " .. (dap.get_log_level and dap.get_log_level() or "unknown"))
       end, { desc = "Debug: Show config info" })
     end,
-  }
+  },
 }
-
