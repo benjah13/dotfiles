@@ -60,7 +60,6 @@ return {
     end)
 
     vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "[C]ode [A]ctions" })
-    vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, { desc = "[C]ode [D]iagnostics" })
     vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { desc = "[C]ode [R]ename" })
     vim.keymap.set("n", "gd", builtin.lsp_definitions, { desc = "[G]oto [D]efinitions" })
     vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Show [K]ind" })

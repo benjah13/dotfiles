@@ -31,7 +31,7 @@ return require("lazy").setup {
   { import = "plugins.clipboard-history" },
   { import = "plugins.illuminate" },
   { import = "plugins.namu" },
-  { import = "plugins.format-ts-errors" },
+  { import = "plugins.rulebook" },
   { import = "plugins.vim-visual-multi" },
   { import = "plugins.comment" },
   { import = "plugins.autopairs" },
